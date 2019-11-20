@@ -1,0 +1,27 @@
+<% include partials/header %>
+<div class="container">
+        <header class="jumbotron">
+            <div class="container">
+                    <h1>Welcome to SocialWizard!</h1>
+                    <p>Connect with the best wizards and witches across the world</p>
+                    <p>
+                        <a href="/wizards/new" class="btn btn-lg btn-primary">Add a new Post</a>
+                    </p>
+            </div>           
+        </header>
+        <div class = "row text-center" style="display: flex; flex-wrap: wrap;">
+            <% wizards.forEach((wizard)=>{ %>   
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail">
+                            <img src="<%= wizard.image%>" alt="" />  
+                            <div class="caption">
+                                <h4> <%= wizard.title%></h4>
+                            </div>
+                    </div>
+                </div>                      
+                <%}) ;%>
+            </div>
+            <a href="/wizards">View all posts</a>
+            <a href="/">Go back</a>
+        </div>    
+<% include partials/footer %>
